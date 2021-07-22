@@ -1,0 +1,21 @@
+{
+  "name": "antlr-js-tutorial",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "antlr4": "^4.9.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
+  "scripts": {
+    "test": "npm run gen && mocha",
+    "tokens": "npm run java:gen && npm run java:comp && npm run grun:tokens",
+    "tree": "npm run java:gen && npm run java:comp && npm run grun:tree",
+    "gen": "antlr4 -Dlanguage=JavaScript -visitor TestParser.g4 && antlr4 -Dlanguage=JavaScript -visitor TestLexer.g4",
+    "java:gen": "antlr4 TestLexer.g4 && antlr4 TestParser.g4",
+    "java:comp": "javac *.java",
+    "grun:tokens": "grun Test universeParam test.txt -tokens",
+    "grun:tree": "grun Test universeParam test.txt -gui"
+  }
+}
