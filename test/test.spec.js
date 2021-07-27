@@ -29,8 +29,6 @@ function parse(input) {
 
   const myTestVisitor = new MyTestVisitor();
   myTestVisitor.visit(tree);
-
-  console.log('myTestVisitor',myTestVisitor.universes)
 }
 
 describe.only("test", function () {

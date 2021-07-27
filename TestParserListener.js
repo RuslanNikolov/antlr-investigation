@@ -41,6 +41,15 @@ export default class TestParserListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TestParser#object.
+	enterObject(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#object.
+	exitObject(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TestParser#normal.
 	enterNormal(ctx) {
 	}
@@ -65,6 +74,15 @@ export default class TestParserListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by TestParser#arrayval.
 	exitArrayval(ctx) {
+	}
+
+
+	// Enter a parse tree produced by TestParser#objectval.
+	enterObjectval(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#objectval.
+	exitObjectval(ctx) {
 	}
 
 

@@ -30,6 +30,12 @@ export default class TestParserVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by TestParser#object.
+	visitObject(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by TestParser#normal.
 	visitNormal(ctx) {
 	  return this.visitChildren(ctx);
@@ -44,6 +50,12 @@ export default class TestParserVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by TestParser#arrayval.
 	visitArrayval(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by TestParser#objectval.
+	visitObjectval(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

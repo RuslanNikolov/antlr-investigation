@@ -4,7 +4,9 @@ options { tokenVocab=TestLexer; language=JavaScript; }
 universeParam: universe* ;
 universe    : INSTRCODE? instrParams? SEMICOLON ;
 instrParams: LEFT_BRACKET instrParam+ RIGHT_BRACKET;
-instrParam: PARAMWORD DELIM paramVal;
-paramVal: PARAMWORD #normal |
+instrParam: PARAMWORD DELIM paramValue;
+object: LEFT_BRACKET instrParam* RIGHT_BRACKET;
+paramValue: PARAMWORD #normal |
           WSWORD #whitespaceparam |
-          ARRAY #arrayval ;
+          ARRAY #arrayval |
+          object #objectval ;

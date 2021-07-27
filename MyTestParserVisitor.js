@@ -10,7 +10,7 @@ export default class MyTestParserVisitor extends TestParserVisitor {
 
   // Visit a parse tree produced by TestParser#universe.
   visitUniverse(ctx) {
-    console.log("visitor universe", ctx.getText());
+    // console.log("visitor universe", ctx.getText());
     return this.visitChildren(ctx);
   }
 
