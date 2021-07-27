@@ -27,25 +27,13 @@ public class TestParserBaseListener implements TestParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUniverse(TestParser.UniverseContext ctx) { }
+	@Override public void enterInstrParamsGroup(TestParser.InstrParamsGroupContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUniverse(TestParser.UniverseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterInstrParams(TestParser.InstrParamsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitInstrParams(TestParser.InstrParamsContext ctx) { }
+	@Override public void exitInstrParamsGroup(TestParser.InstrParamsGroupContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -94,6 +82,30 @@ public class TestParserBaseListener implements TestParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitArrayval(TestParser.ArrayvalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterObjectval(TestParser.ObjectvalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitObjectval(TestParser.ObjectvalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterObject(TestParser.ObjectContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitObject(TestParser.ObjectContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
