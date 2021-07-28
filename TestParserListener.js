@@ -68,12 +68,21 @@ export default class TestParserListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by TestParser#object.
-	enterObject(ctx) {
+	// Enter a parse tree produced by TestParser#objectParamValue.
+	enterObjectParamValue(ctx) {
 	}
 
-	// Exit a parse tree produced by TestParser#object.
-	exitObject(ctx) {
+	// Exit a parse tree produced by TestParser#objectParamValue.
+	exitObjectParamValue(ctx) {
+	}
+
+
+	// Enter a parse tree produced by TestParser#arrayParamValue.
+	enterArrayParamValue(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#arrayParamValue.
+	exitArrayParamValue(ctx) {
 	}
 
 

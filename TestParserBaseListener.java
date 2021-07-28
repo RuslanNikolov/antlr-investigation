@@ -99,13 +99,25 @@ public class TestParserBaseListener implements TestParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterObject(TestParser.ObjectContext ctx) { }
+	@Override public void enterObjectParamValue(TestParser.ObjectParamValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitObject(TestParser.ObjectContext ctx) { }
+	@Override public void exitObjectParamValue(TestParser.ObjectParamValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayParamValue(TestParser.ArrayParamValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayParamValue(TestParser.ArrayParamValueContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

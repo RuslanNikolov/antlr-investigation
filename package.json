@@ -10,12 +10,12 @@
   },
   "scripts": {
     "test": "npm run gen && mocha",
-    "tokens": "java:gen && npm run java:comp && npm run grun:tokens",
+    "tokens": "npm run java:gen && npm run java:comp && npm run grun:tokens",
     "tree": "npm run java:gen && npm run java:comp && npm run grun:tree",
     "gen": "antlr4 -Dlanguage=JavaScript -visitor TestParser.g4 && antlr4 -Dlanguage=JavaScript -visitor TestLexer.g4",
     "java:gen": "npm run java:gen:parser && npm run java:gen:lexer",
-    "java:gen:parser": "antlr4 TestParser.g4",
-    "java:gen:lexer": "antlr4 TestLexer.g4",
+    "java:gen:parser": "antlr4 -visitor TestParser.g4",
+    "java:gen:lexer": "antlr4 -visitor TestLexer.g4",
     "java:comp": "javac *.java",
     "grun:tokens": "grun Test universeParam test.txt -tokens",
     "grun:tree": "grun Test universeParam test.txt -gui"
