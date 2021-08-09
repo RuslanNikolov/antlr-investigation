@@ -12,6 +12,24 @@ export default class TestParserVisitor extends antlr4.tree.ParseTreeVisitor {
 	}
 
 
+	// Visit a parse tree produced by TestParser#universeWithParams.
+	visitUniverseWithParams(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by TestParser#universeWithOnlyCode.
+	visitUniverseWithOnlyCode(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by TestParser#universeUserDefined.
+	visitUniverseUserDefined(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by TestParser#instrParamsGroup.
 	visitInstrParamsGroup(ctx) {
 	  return this.visitChildren(ctx);
@@ -50,12 +68,6 @@ export default class TestParserVisitor extends antlr4.tree.ParseTreeVisitor {
 
 	// Visit a parse tree produced by TestParser#objectParamValue.
 	visitObjectParamValue(ctx) {
-	  return this.visitChildren(ctx);
-	}
-
-
-	// Visit a parse tree produced by TestParser#arrayItem.
-	visitArrayItem(ctx) {
 	  return this.visitChildren(ctx);
 	}
 

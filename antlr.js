@@ -19,7 +19,7 @@ createServer((req, res) => {
    var tokens  = new CommonTokenStream(lexer);
    var parser = new ChatParser(tokens);
       
-   parser.buildParseTrees = true;   
+   parser.buildParseTrees = true; 
    var tree = parser.chat();   
    var htmlChat = new HtmlChatListener(res);
    antlr4.tree.ParseTreeWalker.DEFAULT.walk(htmlChat, tree);

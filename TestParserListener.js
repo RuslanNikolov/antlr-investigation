@@ -14,6 +14,33 @@ export default class TestParserListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TestParser#universeWithParams.
+	enterUniverseWithParams(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#universeWithParams.
+	exitUniverseWithParams(ctx) {
+	}
+
+
+	// Enter a parse tree produced by TestParser#universeWithOnlyCode.
+	enterUniverseWithOnlyCode(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#universeWithOnlyCode.
+	exitUniverseWithOnlyCode(ctx) {
+	}
+
+
+	// Enter a parse tree produced by TestParser#universeUserDefined.
+	enterUniverseUserDefined(ctx) {
+	}
+
+	// Exit a parse tree produced by TestParser#universeUserDefined.
+	exitUniverseUserDefined(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TestParser#instrParamsGroup.
 	enterInstrParamsGroup(ctx) {
 	}
@@ -74,15 +101,6 @@ export default class TestParserListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by TestParser#objectParamValue.
 	exitObjectParamValue(ctx) {
-	}
-
-
-	// Enter a parse tree produced by TestParser#arrayItem.
-	enterArrayItem(ctx) {
-	}
-
-	// Exit a parse tree produced by TestParser#arrayItem.
-	exitArrayItem(ctx) {
 	}
 
 

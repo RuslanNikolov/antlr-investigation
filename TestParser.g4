@@ -1,11 +1,14 @@
 parser grammar TestParser;
 options { tokenVocab=TestLexer; }
 
-universeParam: (INSTRCODE instrParamsGroup | INSTRCODE INSTR_GROUPS_SEPARATOR | instrParamsGroup )+ ;
+universeParam: universe+ ;
+universe: INSTRCODE instrParamsGroup #universeWithParams |
+          INSTRCODE INSTR_GROUPS_SEPARATOR #universeWithOnlyCode |
+          instrParamsGroup #universeUserDefined;
 instrParamsGroup: LEFT_INSTRPARAMS_BRACKET instrParam* RIGHT_INSTRPARAMS_BRACKET; // Enter param pairs lexer mode
 instrParam: PLAIN_PARAM_WORD DELIM paramValue WS*;
 paramValue: PLAIN_PARAM_WORD #normal  |
-            WS_PARAM_VALUE #whitespaceparam |
+            WHITESPACE_SINGLE_QUOTE WS_PARAM_VALUE_CONTENT WH_END_SINGLE_QUOTE #whitespaceparam |
           arrayParamValue #arrayval |
           objectParamValue #objectval 
           ; 

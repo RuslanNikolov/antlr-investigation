@@ -1,5 +1,4 @@
 import TestParserListener from "./TestParserListener.js";
-import {getChilds} from './test/test.spec.js'
 
 // This class defines a complete listener for a parse tree produced by TestParser.
 export default class MyTestListener extends TestParserListener {

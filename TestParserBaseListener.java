@@ -27,6 +27,42 @@ public class TestParserBaseListener implements TestParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterUniverseWithParams(TestParser.UniverseWithParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUniverseWithParams(TestParser.UniverseWithParamsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterUniverseWithOnlyCode(TestParser.UniverseWithOnlyCodeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUniverseWithOnlyCode(TestParser.UniverseWithOnlyCodeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterUniverseUserDefined(TestParser.UniverseUserDefinedContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUniverseUserDefined(TestParser.UniverseUserDefinedContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterInstrParamsGroup(TestParser.InstrParamsGroupContext ctx) { }
 	/**
 	 * {@inheritDoc}

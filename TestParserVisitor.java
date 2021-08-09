@@ -16,6 +16,27 @@ public interface TestParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitUniverseParam(TestParser.UniverseParamContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code universeWithParams}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUniverseWithParams(TestParser.UniverseWithParamsContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code universeWithOnlyCode}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUniverseWithOnlyCode(TestParser.UniverseWithOnlyCodeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code universeUserDefined}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUniverseUserDefined(TestParser.UniverseUserDefinedContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link TestParser#instrParamsGroup}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

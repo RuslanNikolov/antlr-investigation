@@ -17,6 +17,42 @@ public interface TestParserListener extends ParseTreeListener {
 	 */
 	void exitUniverseParam(TestParser.UniverseParamContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code universeWithParams}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void enterUniverseWithParams(TestParser.UniverseWithParamsContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code universeWithParams}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void exitUniverseWithParams(TestParser.UniverseWithParamsContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code universeWithOnlyCode}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void enterUniverseWithOnlyCode(TestParser.UniverseWithOnlyCodeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code universeWithOnlyCode}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void exitUniverseWithOnlyCode(TestParser.UniverseWithOnlyCodeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code universeUserDefined}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void enterUniverseUserDefined(TestParser.UniverseUserDefinedContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code universeUserDefined}
+	 * labeled alternative in {@link TestParser#universe}.
+	 * @param ctx the parse tree
+	 */
+	void exitUniverseUserDefined(TestParser.UniverseUserDefinedContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link TestParser#instrParamsGroup}.
 	 * @param ctx the parse tree
 	 */
