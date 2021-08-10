@@ -1,4 +1,5 @@
 import TestParserVisitor from "./TestParserVisitor.js";
+import log from "log-full";
 
 // This class defines a complete listener for a parse tree produced by TestParser.
 export default class MyTestParserVisitor extends TestParserVisitor {
@@ -9,62 +10,69 @@ export default class MyTestParserVisitor extends TestParserVisitor {
 
   // Visit a parse tree produced by TestParser#universeWithParams.
   visitUniverseWithParams(ctx) {
-    // const instrCode = ctx.INSTRCODE().getText();
-    // const instrParamsGroupObj = this.visitInstrParamsGroup(ctx.instrParamsGroup());
-    // instrParamsGroupObj.instrumentDefinition.instrumentCode = instrCode;
-    // return instrParamsGroupObj;
-    return this.visitChildren(ctx)
+    return  {[ctx.INSTRCODE()]: this.visit(ctx.instrParamsGroup())};
   }
 
   // Visit a parse tree produced by TestParser#universeWithOnlyCode.
   visitUniverseWithOnlyCode(ctx) {
-    return this.visitChildren(ctx);
+    return {[ctx.INSTRCODE()]: ''};
   }
 
   // Visit a parse tree produced by TestParser#universeUserDefined.
   visitUniverseUserDefined(ctx) {
-    return this.visitChildren(ctx);
+    return {'': this.visit(ctx.instrParamsGroup())};
   }
 
   // Visit a parse tree produced by TestParser#instrParamsGroup.
   visitInstrParamsGroup(ctx) {
-    return this.visitChildren(ctx);
+
+    return this.visitObjectParamValue(ctx);
   }
 
   // Visit a parse tree produced by TestParser#instrParam.
   visitInstrParam(ctx) {
-    return this.visitChildren(ctx);
+    const instrParamObj = {
+      [ctx.PLAIN_PARAM_WORD()]: this.visit(ctx.paramValue()),
+    };
+    return instrParamObj;
   }
 
   // Visit a parse tree produced by TestParser#normal.
   visitNormal(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.getText();
   }
 
   // Visit a parse tree produced by TestParser#whitespaceparam.
   visitWhitespaceparam(ctx) {
-    const returnTargetValue = ctx.WS_PARAM_VALUE_CONTENT().getText();
-    console.log('here',returnTargetValue);
-    return this.visitChildren(ctx);
+    return ctx.WS_PARAM_VALUE_CONTENT().getText();
   }
 
   // Visit a parse tree produced by TestParser#arrayval.
   visitArrayval(ctx) {
-    return this.visitChildren(ctx);
+    return this.visit(ctx.arrayParamValue());
   }
 
   // Visit a parse tree produced by TestParser#objectval.
   visitObjectval(ctx) {
-    return this.visitChildren(ctx);
+    return this.visit(ctx.objectParamValue());
+
   }
 
   // Visit a parse tree produced by TestParser#objectParamValue.
   visitObjectParamValue(ctx) {
-    return this.visitChildren(ctx);
+    const newObj = ctx.instrParam().reduce(
+      (init, next) => ({
+        ...init,
+        ...this.visitInstrParam(next),
+      }),
+      {}
+    );
+
+    return newObj;
   }
 
   // Visit a parse tree produced by TestParser#arrayParamValue.
   visitArrayParamValue(ctx) {
-    return this.visitChildren(ctx);
+    return ctx.paramValue().map((paramValueCtx) => this.visit(paramValueCtx));
   }
 }

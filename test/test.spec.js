@@ -1,5 +1,6 @@
 import assert from "assert";
 import antlr4 from "antlr4";
+import * as log from 'log-full';
 import fs from "fs";
 import path from "path";
 const { CommonTokenStream, InputStream } = antlr4;
@@ -33,7 +34,8 @@ function parse(input) {
   antlr4.tree.ParseTreeWalker.DEFAULT.walk(myTestParserListener, tree);
 
   const myTestVisitor = new MyTestVisitor();
-  myTestVisitor.visit(tree);
+  const finalStructure = myTestVisitor.visit(tree);
+  console.logFull(finalStructure)
 }
 
 describe.only("test", function () {
